@@ -1,0 +1,49 @@
+<odoo>
+  <record id="instituto_subjects_form_view" model="ir.ui.view">
+    <field name="name">instituto.subject.form</field>
+    <field name="model">instituto.subject</field>
+    <field name="arch" type="xml">
+      <form string="Asignatura">
+        <sheet layout="auto">
+            <notebook>
+              <page name="subject_data" string="Datos Asignatura">
+                <group>
+                    <field name="codAsignatura" />
+                    <field name="name" />
+                    <field name="numHoras" />
+                    <field name="optativa" />
+                </group>
+              </page>
+              <page name="students" string="Estudiantes">
+                <group>
+                    <field name="student_ids"/>
+                </group>
+              </page>
+            </notebook>            
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="instituto_subject_tree_view" model="ir.ui.view">
+    <field name="name">instituto.subject.tree</field>
+    <field name="model">instituto.subject</field>
+    <field name="arch" type="xml">
+      <tree string="Datos asignatura">
+        <field name="codAsignatura" />
+        <field name="name" />
+        <field name="numHoras" />
+        <field name="optativa" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="subject_list_action" model="ir.actions.act_window">
+    <field name="name">subject</field>
+    <field name="res_model">instituto.subject</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first Subject</p>
+    </field>
+  </record>
+</odoo>

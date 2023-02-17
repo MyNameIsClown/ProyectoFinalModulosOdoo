@@ -1,0 +1,12 @@
+<odoo>
+    <!-- Top menu item -->
+  <menuitem name="Instituto" id="main_instituto_menu" />
+
+  <!-- menu categories -->
+  <menuitem name="Instituto" id="instituto_menu" parent="main_instituto_menu"/>
+
+  <!-- actions -->
+  <menuitem name="Classes" id="classes_menu" parent="instituto_menu" action="classes_list_action"/>
+  <menuitem name="Students" id="students_menu" parent="instituto_menu" action="student_list_action"/>
+  <menuitem name="Subjects" id="subjects_menu" parent="instituto_menu" action="subject_list_action"/>
+</odoo>

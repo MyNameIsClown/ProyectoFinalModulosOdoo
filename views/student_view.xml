@@ -1,0 +1,48 @@
+<odoo>
+  <record id="instituto_Student_form_view" model="ir.ui.view">
+    <field name="name">instituto.student.form</field>
+    <field name="model">instituto.student</field>
+    <field name="arch" type="xml">
+      <form string="Student">
+        <sheet layout="auto">
+            <notebook>
+                <page name="student_data" string="Datos del estudiante">
+                    <group>
+                        <field name="nif" />
+                        <field name="name" />
+                        <field name="fsurname" />
+                        <field name="ssurname" />
+                        <field name="class_id" widget="many2one" />
+                    </group>
+                </page>
+                <page name="subject_data" string="Asignaturas del estudiante">
+                    <field name="subjects_ids" widget="many2many" />
+                </page>
+            </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="instituto_Student_tree_view" model="ir.ui.view">
+    <field name="name">instituto.student.tree</field>
+    <field name="model">instituto.student</field>
+    <field name="arch" type="xml">
+      <tree string="Datos estudiante">
+        <field name="nif" />
+        <field name="name" />
+        <field name="fsurname" />
+        <field name="ssurname" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="student_list_action" model="ir.actions.act_window">
+    <field name="name">Student</field>
+    <field name="res_model">instituto.student</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first Student</p>
+    </field>
+  </record>
+</odoo>
